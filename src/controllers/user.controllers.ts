@@ -1,9 +1,9 @@
 import { eq } from 'drizzle-orm';
-import { db } from '../index';
-import { users } from '../schema/schema';
+import { users } from '../schema/user.schema';
+import { db } from '../server';
 
 export const userController = {
-  
+
   getAllUsers: async () => {
     return await db.select({
       id: users.id,

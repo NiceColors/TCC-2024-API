@@ -1,8 +1,8 @@
 import bcrypt from "bcrypt";
 import { eq } from 'drizzle-orm';
 
-import { db } from '../index';
-import { users } from "@/schema/schema";
+import { users } from "@/schema/user.schema";
+import { db } from '../server';
 
 export function passwordToSaltedHash(password: string): string {
     const saltRounds = 10;

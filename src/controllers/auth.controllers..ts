@@ -2,8 +2,8 @@ import bcrypt from 'bcrypt';
 import 'dotenv/config';
 import { eq, sql } from 'drizzle-orm';
 import jwt from 'jsonwebtoken';
-import { db } from '..';
-import { users } from '../schema/schema';
+import { users } from '../schema/user.schema';
+import { db } from '../server';
 
 const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET as string;
 const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET as string;

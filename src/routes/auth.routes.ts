@@ -1,8 +1,8 @@
 import { eq } from 'drizzle-orm';
 import { Router } from 'express';
-import { db } from '..';
-import { authController } from '../controllers/authController';
-import { users } from '../schema/schema';
+import { authController } from '../controllers/auth.controllers.';
+import { users } from '../schema/user.schema';
+import { db } from '../server';
 
 
 export const authRouter = Router();
