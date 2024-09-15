@@ -1,6 +1,6 @@
 import { eq } from 'drizzle-orm';
 import { users } from '../schema/user.schema';
-import { db } from '../server';
+import { db } from '@/lib/db';
 
 export const userController = {
 
