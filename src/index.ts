@@ -5,7 +5,7 @@ import { createClient } from '@libsql/client';
 import dotenv from 'dotenv';
 import { drizzle } from 'drizzle-orm/libsql';
 import express from 'express';
-import { routes } from './routes';
+import { authRoutes, routes } from './routes';
 
 dotenv.config();
 
@@ -26,7 +26,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+app.use('/auth', authRoutes);
 app.use('/api', routes);
+
 
 
 app.listen(port, () => {
