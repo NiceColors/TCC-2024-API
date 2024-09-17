@@ -1,12 +1,10 @@
 # Cronograma de Desenvolvimento
 
-Cronograma das principais etapas do desenvolvimento da plataforma de leitura e discussão de artigos.
-
 ## 1. Planejamento
 
 | **Fase**                           | **Período**                        | **Descrição da atividade**                                                                                             |
 |-------------------------------------|------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| **Autenticação e Configuração Inicial** | *08 de setembro - 20 de setembro de 2024* | - Finalizar sistema de registro e login<br>- Integrar banco de dados para usuários<br>- Configurar rotas de autenticação e criar páginas de login/cadastro no frontend |
+| **Autenticação e Configuração Inicial** | *08 de setembro - 20 de setembro de 2024* | - Modelagem do Banco<br>- Finalizar sistema de registro e login<br>- Integrar banco de dados para usuários<br>- Configurar rotas de autenticação e criar páginas de login/cadastro no frontend |
 | **CRUD de Artigos e Comentários**   | *20 de setembro - 13 de outubro de 2024* | - Implementar CRUD de artigos no backend<br>- Desenvolver interface de gerenciamento de artigos no frontend<br>- Sistema de comentários e anotações |
 | **Discussões em Grupo**             | *14 de outubro - 27 de outubro de 2024* | - Implementar discussões síncronas (via WebSockets ou similar)<br>- Implementar discussões assíncronas (comentários)<br>- Criar interface de discussões |
 | **Aprimoramento da Experiência do Usuário** | *28 de outubro - 10 de novembro de 2024* | - Melhorar UI/UX para facilitar a navegação e interação<br>- Implementar notificações<br>- Adicionar busca e filtragem de artigos<br>- Implementar controle de versão dos artigos |
@@ -17,6 +15,7 @@ Cronograma das principais etapas do desenvolvimento da plataforma de leitura e d
 ### Autenticação e Configuração Inicial (Semana 1-2)
 **Período:** *08 de setembro - 20 de setembro de 2024*
 
+- Modelagem do Banco
 - Finalizar sistema de registro e login utilizando JWT.
 - Integrar banco de dados para armazenar usuários e artigos.
 - Configurar rotas de autenticação e criar páginas de login/cadastro no frontend.
