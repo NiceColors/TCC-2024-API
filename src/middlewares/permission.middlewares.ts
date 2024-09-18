@@ -1,6 +1,6 @@
 
 export const permission = (req: any, res: any, next: any) => {
-    const hasPermission = false;
+    const hasPermission = true;
 
     if (hasPermission) {
         next();

@@ -10,14 +10,15 @@ export const auth = (req: any, res: any, next: any) => {
         return res.status(500).json({ message: 'Internal server error' });
     }
 
-    const token = req.headers.authorization;
+    const token = req.headers['authorization'];
 
     if (!token) {
         return res.status(401).json({ message: 'Unauthorized' });
     }
 
-    jwt.verify(token.split(' ')[1], ACCESS_TOKEN_SECRET!, (err: any, decoded: any) => {
+    jwt.verify(token, ACCESS_TOKEN_SECRET!, (err: any, decoded: any) => {
         if (err) {
+            console.log(err);
             return res.status(403).json({ message: 'Invalid token' });
         }
         req.user = decoded;
