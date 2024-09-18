@@ -15,6 +15,7 @@
 ### Autenticação e Configuração Inicial (Semana 1-2)
 **Período:** *08 de setembro - 20 de setembro de 2024*
 
+![alt text](image.png)
 - Modelagem do Banco
 - Finalizar sistema de registro e login utilizando JWT.
 - Integrar banco de dados para armazenar usuários e artigos.
