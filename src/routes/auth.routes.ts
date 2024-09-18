@@ -37,23 +37,18 @@ authRouter.post('/login', async (req, res) => {
 });
 
 
-authRouter.post('/refresh-token', async (req, res) => {
-    const { refreshToken } = req.body;
+authRouter.get('/refresh-token', async (req, res) => {
+    const refresh_token = req.headers['refresh-token'];
 
-    if (!refreshToken) {
-        return res.status(400).json({ message: 'Refresh token is required' });
-    }
+    console.log('token', refresh_token);
 
-    const result = await authController.refreshToken({ refreshToken });
+    const new_token = await authController.refreshToken({
+        refreshToken: refresh_token as string
+    });
 
-    if (!result) {
-        return res.status(401).json({ message: 'Invalid refresh token' });
-    }
-
-    return res.json(result);
+    return res.json(new_token);
 
 });
-
 
 authRouter.post('/register', async (req, res) => {
     const { name, email, password } = req.body;

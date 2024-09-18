@@ -1,7 +1,7 @@
 import { middlewares } from '@/middlewares/middlewares';
+import { authRouter } from '@/routes/auth.routes';
+import { userRouter } from '@/routes/user.routes';
 import express from 'express';
-import { authRouter } from './auth.routes';
-import { userRouter } from './user.routes';
 
 
 export const routes = express.Router();

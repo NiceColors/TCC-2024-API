@@ -29,10 +29,6 @@ export function createHandler<T extends z.ZodType>(
 
 
 
-
-
-
-
 // handler para uma rota sem validação de schema.
 // Retorna uma função assíncrona que pode ser usada como middleware no Express.
 export function createHandler(

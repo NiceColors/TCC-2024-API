@@ -13,12 +13,7 @@ export function passwordToSaltedHash(password: string): string {
 
 }
 
-async function getUserFromDb(id: string) {
-    const result = await db.select({
-        id: users.id,
-        name: users.name,
-        email: users.email,
-    }).from(users).where(eq(users.id, parseInt(id)));
-
-    return result
+export async function comparePasswordToHash(password: string, hash: string): Promise<boolean> {
+    return bcrypt.compare(password, hash);
 }
+

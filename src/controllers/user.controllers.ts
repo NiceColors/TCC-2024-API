@@ -1,20 +1,33 @@
+import { db } from '@/lib/db';
+import { createUser, getAllUsers, getUserByEmail } from '@/services/user.services';
 import { eq } from 'drizzle-orm';
 import { users } from '../schema/user.schema';
-import { db } from '@/lib/db';
 
 export const userController = {
 
   getAllUsers: async () => {
-    return await db.select({
-      id: users.id,
-      name: users.name,
-      email: users.email,
-    }).from(users);
+    const users = await getAllUsers();
+    return users
+
   },
 
+
   createUser: async (name: string, email: string, password: string) => {
-    const result = await db.insert(users).values({ name, email, password }).returning();
-    return result[0];
+
+    const userParams = { name, email, password };
+    const existingUser = await getUserByEmail(userParams.email);
+
+    if (existingUser) {
+      throw new Error('User already exists');
+    }
+
+
+    const result = await createUser({
+      name: userParams.name,
+      email: userParams.email,
+      password: userParams.password
+    });
+
   },
 
   getUserById: async (id: number) => {

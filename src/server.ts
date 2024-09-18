@@ -1,11 +1,11 @@
 import 'module-alias/register';
 
 
+import { authRoutes, routes } from '@/routes/routes';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
-import { authRoutes, routes } from './routes/routes';
 import rateLimit from 'express-rate-limit';
-import cors from 'cors';
 
 dotenv.config();
 
